@@ -9,6 +9,9 @@ import { ListUserSendComplimentsController } from './controllers/ListUserSendCom
 import { ListUserReceiveComplimentsController } from './controllers/ListUserReceiveComplimentsController';
 import { ListTagController } from './controllers/ListTagController';
 import { ListUserController } from './controllers/ListUserController';
+import { PhotoController } from './controllers/PhotoController';
+import { upload } from './config/multerConfig';
+import { cloudinaryConfig } from './config/cloudinaryConfig';
 
 
 
@@ -22,11 +25,15 @@ const listUserSendComplimentsController = new ListUserSendComplimentsController(
 const listUserReceiveComplimentsController = new ListUserReceiveComplimentsController();
 const listTagController = new ListTagController();
 const listUserController = new ListUserController();
+const photoControler = new PhotoController();
 
 router.post('/users', createUserController.handle);
 router.post('/tags', ensureAuthenticated, ensureAdmin, createTagController.handle);
 router.post('/login', authenticateUserController.handle);
-router.post('/compliments', ensureAuthenticated,createComplimentController.handle);
+router.post('/compliments', ensureAuthenticated, createComplimentController.handle);
+
+
+router.post('/users/photo', ensureAuthenticated, upload, cloudinaryConfig ,photoControler.handle);
 
 router.get('/users/compliments/send', ensureAuthenticated, listUserSendComplimentsController.handle);
 router.get('/users/compliments/receive', ensureAuthenticated, listUserReceiveComplimentsController.handle);

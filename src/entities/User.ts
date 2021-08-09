@@ -1,6 +1,7 @@
-import {Column, CreateDateColumn, Entity, PrimaryColumn} from "typeorm";
+import {Column, CreateDateColumn, Entity, OneToMany, OneToOne, PrimaryColumn} from "typeorm";
 import {v4 as uuid} from 'uuid'
 import {Exclude } from 'class-transformer'
+import { Photo } from "./Photo";
 
 @Entity('users')
 class User {
@@ -11,6 +12,9 @@ class User {
   name: string;
   @Column()
   email: string;
+
+  @OneToOne(type => Photo, photos => photos.userPhotoId)
+  photos: Photo;
 
   @Exclude()
   @Column()
