@@ -4,13 +4,13 @@ export default {
    "logging": true,
    "synchronize": true,
    "entities": [
-       "dist/entities/*.ts"
+       "dist/src/entities/*.ts"
    ],
    "subscribers": [
        "src/subscriber/*.ts"
    ],
    "migrations": [
-       "dist/migrations/*.ts"
+       "dist/src/migrations/*.ts"
    ],
    "cli": {
        "entitiesDir": "src/entities",
