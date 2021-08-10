@@ -33,7 +33,7 @@ router.post('/login', authenticateUserController.handle);
 router.post('/compliments', ensureAuthenticated, createComplimentController.handle);
 
 
-router.post('/users/photo', ensureAuthenticated, upload, cloudinaryConfig ,photoControler.handle);
+router.post('/users/photo', upload, cloudinaryConfig ,photoControler.handle);
 
 router.get('/users/compliments/send', ensureAuthenticated, listUserSendComplimentsController.handle);
 router.get('/users/compliments/receive', ensureAuthenticated, listUserReceiveComplimentsController.handle);
