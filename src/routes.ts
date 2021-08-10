@@ -40,6 +40,6 @@ router.get('/users/compliments/receive', ensureAuthenticated, listUserReceiveCom
 
 router.get('/tags', ensureAuthenticated, listTagController.handle)
 
-router.get('/users', ensureAuthenticated, listUserController.handle)
+router.get('/users', listUserController.handle)
 
 export {router};
