@@ -5,13 +5,13 @@ module.exports = {
    "synchronize": true,
    "ssl": true,
    "entities": [
-       "dist/src/entities/*.ts"
+       "dist/entities/*.ts"
    ],
    "subscribers": [
        "src/subscriber/*.ts"
    ],
    "migrations": [
-       "dist/src/migrations/*.ts"
+       "dist/migrations/*.ts"
    ],
    "cli": {
        "entitiesDir": "src/entities",
