@@ -1,6 +1,7 @@
 import multer from 'multer'
 import {resolve, extname } from 'path'
 import DatauriParser from 'datauri/parser'
+import { request } from 'express';
   //**** For own server ****
   // const storage = multer.diskStorage({
   //   destination: function (req, file, cb) {
