@@ -10,13 +10,13 @@ module.exports = {
      }
    },
    "entities": [
-       "dist/entities/*.ts"
+       "dist/entities/*.js"
    ],
    "subscribers": [
        "src/subscriber/*.ts"
    ],
    "migrations": [
-       "dist/migrations/*.ts"
+       "dist/migrations/*.js"
    ],
    "cli": {
        "entitiesDir": "src/entities",
